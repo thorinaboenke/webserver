@@ -1,22 +1,26 @@
-// copied from stack overflow
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { listenerCount } = require('cluster');
-const port = 3000;
+
+const port = 8080;
 
 //http.createServer(request listener) creates server object that can listen to ports
 //on the computer and can execute a function i.e. the request listener each time a request is made
-// here we want to serve static files from the folder ./public
+// here we want to serve static files from the folder 'public'
 http
   .createServer(function (request, response) {
     console.log('request starting...');
     // extract the filepath from url to be used further down with fs.readfile to display the content
     // for just http://localhost:${port} the request.url is '/'
     let filePath = '.' + request.url;
-    if (filePath == './') {
+    if (filePath === './') {
       filePath = './public/index.html'; // if no url is specified, use this as 'landing page'
+    } else {
+      filePath = './' + 'public' + request.url;
+      console.log(filePath);
     }
+
     console.log(request.url);
     let extname = path.extname(filePath); // which filetype is requested? html/css/js etc. ??
     let contentType = 'text/html'; // change the contentType according to requested file
@@ -47,18 +51,14 @@ http
       if (error) {
         if (error.code == 'ENOENT') {
           // for 404 errors
-          fs.readFile('.public/404.html', function (error, content) {
+          fs.readFile('./public/404.html', function (error, content) {
             response.writeHead(200, { 'Content-Type': contentType });
             response.end(content, 'utf-8');
           });
         } else {
           // for all other errors
           response.writeHead(500);
-          response.end(
-            'Sorry, check with the site admin for error: ' +
-              error.code +
-              ' ..\n',
-          );
+          response.end('Sorry, an error occured: ' + error.code + ' ..\n');
           response.end();
         }
         // this section displays the content of the file if no error occured:
