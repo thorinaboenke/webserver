@@ -18,4 +18,4 @@ will serve index.html
 Pages/documents in the public directory can be accessed by:
 http://localhost:8080<documentname>
 
-i.e. enter http://localhost:8080/styles.css etc.
+i.e. navigate to http://localhost:8080/styles.css etc.
