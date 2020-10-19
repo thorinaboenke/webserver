@@ -13,7 +13,7 @@ Node.js runs a local web server at http://localhost:8080
 http://localhost:8080
 will serve index.html
 
-## all other pages/documents
+## Other pages
 
 Pages/documents in the public directory can be accessed by:
 http://localhost:8080<documentname>
