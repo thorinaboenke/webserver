@@ -5,12 +5,5 @@
   "repository": "https://github.com/thorinaboenke/webserver",
   "author": "Thorina Boenke <thorina-boenke@web.de>",
   "license": "MIT",
-  "dependencies": {
-    "confetti-js": "0.0.18",
-    "express": "^4.17.1",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "path": "^0.12.7",
-    "url": "^0.11.0"
-  }
+  "dependencies": {}
 }
