@@ -1,6 +1,6 @@
 # node.js webserver
 
-Created during UpLeveled Bootcamp Vienna September 2020.
+Created during UpLeveled Web Development Bootcamp Vienna September 2020.
 
 Objective: Run a server locally with node.js without using dependencies/external libraries
 
