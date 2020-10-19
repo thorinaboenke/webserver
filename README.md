@@ -16,6 +16,6 @@ will serve index.html
 ## Other pages
 
 Pages/documents in the public directory can be accessed by:
-http://localhost:8080<documentname>
+http://localhost:8080/ <documentname>
 
 i.e. navigate to http://localhost:8080/styles.css etc.
