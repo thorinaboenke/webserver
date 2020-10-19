@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { listenerCount } = require('cluster');
 
 const port = 8080;
 
